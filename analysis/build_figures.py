@@ -380,7 +380,7 @@ def fig7_ipw_invariance(findings):
     ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1.0))
     ax.set_title("Aspiration inversion is invariant to sample reweighting",
                   loc="left")
-    ax.legend(frameon=False)
+    ax.legend(loc="upper right", bbox_to_anchor=(0.88, 1.0), frameon=False)
     ax.text(0, -0.30, "IPW reweights to {gt: 60%, india: 25%, tech: 10%, hubs: 5%}. Per-task gaps differ by < 0.5pp.",
              transform=ax.transAxes, fontsize=8.5, color="#B5A0AB")
     save(fig, "fig7_ipw_invariance")
