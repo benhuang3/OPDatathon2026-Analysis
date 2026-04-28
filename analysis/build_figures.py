@@ -239,9 +239,7 @@ def fig3_lca_profile(df):
     ax.set_xticks(x); ax.set_xticklabels(item_labels, rotation=45, ha="right")
     ax.set_ylabel("P(item = 1 | class)")
     ax.set_ylim(0, 1.05)
-    ax.set_title("LCA k=3 item-response profile: a willing-but-not-using middle class",
-                  loc="left", pad=18)
-    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 0.22), frameon=False)
+    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 0.10), frameon=False)
     ax.text(0, -0.38, "stepmix LCA, BIC=13131. Modal class is Aspirational: low use across all items, high want across analytical items.",
             transform=ax.transAxes, fontsize=8.5, color="#B5A0AB")
     save(fig, "fig3_lca_profile")
