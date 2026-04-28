@@ -21,18 +21,22 @@ import methods as M  # noqa: E402
 FIGDIR = ROOT / "figures"
 FIGDIR.mkdir(exist_ok=True)
 
-# Color system
+# Color system — dark theme
 PALETTE = {
-    "primary": "#2C3E50",      # near-black
-    "accent": "#E67E22",        # warm orange
-    "secondary": "#16A085",     # teal
-    "muted": "#95A5A6",         # gray
-    "skeptic": "#C0392B",       # red
-    "late": "#F39C12",          # amber
-    "consumer": "#27AE60",      # green
-    "gn": "#3498DB",            # blue
-    "gs": "#E74C3C",            # rose
-    "background": "#FFFFFF",
+    "primary": "#ECF0F1",       # near-white (emphasis on dark)
+    "accent": "#F39C42",         # warm orange
+    "secondary": "#1ABC9C",      # teal
+    "muted": "#7F8C8D",          # gray
+    "skeptic": "#E74C3C",        # red
+    "late": "#F1C40F",           # amber
+    "consumer": "#2ECC71",       # green
+    "gn": "#5DADE2",             # blue
+    "gs": "#EC7063",             # rose
+    "background": "#1A1D24",     # near-black
+    "text": "#E0E0E0",
+    "muted_text": "#9AA0A6",
+    "axis": "#888888",
+    "grid": "#2A2E36",
 }
 
 mpl.rcParams.update({
@@ -44,16 +48,23 @@ mpl.rcParams.update({
     "axes.labelsize": 10,
     "axes.spines.top": False,
     "axes.spines.right": False,
+    "axes.facecolor": PALETTE["background"],
+    "axes.edgecolor": PALETTE["axis"],
+    "axes.labelcolor": PALETTE["text"],
+    "axes.titlecolor": "#F0F0F0",
     "axes.grid": True,
     "grid.linestyle": "-",
     "grid.linewidth": 0.5,
-    "grid.color": "#EEEEEE",
-    "axes.edgecolor": "#222222",
-    "xtick.color": "#222222",
-    "ytick.color": "#222222",
+    "grid.color": PALETTE["grid"],
+    "text.color": PALETTE["text"],
+    "xtick.color": "#CCCCCC",
+    "ytick.color": "#CCCCCC",
     "xtick.labelsize": 9,
     "ytick.labelsize": 9,
+    "figure.facecolor": PALETTE["background"],
     "figure.dpi": 100,
+    "savefig.facecolor": PALETTE["background"],
+    "savefig.edgecolor": "none",
     "savefig.dpi": 300,
     "savefig.bbox": "tight",
 })
@@ -94,8 +105,8 @@ def fig1_aspiration_inversion(findings):
     # Left panel — paired use vs want
     y = np.arange(len(tasks))
     width = 0.35
-    axes[0].barh(y - width/2, use, width, color=PALETTE["muted"], label="Use today", edgecolor="white")
-    axes[0].barh(y + width/2, want, width, color=PALETTE["accent"], label="Want", edgecolor="white")
+    axes[0].barh(y - width/2, use, width, color=PALETTE["muted"], label="Use today", edgecolor="#1A1D24")
+    axes[0].barh(y + width/2, want, width, color=PALETTE["accent"], label="Want", edgecolor="#1A1D24")
     axes[0].set_yticks(y); axes[0].set_yticklabels([nice[t] for t in tasks])
     axes[0].set_xlim(0, 0.7)
     axes[0].set_xlabel("Share of respondents")
@@ -109,12 +120,12 @@ def fig1_aspiration_inversion(findings):
     colors = [PALETTE["primary"] if g >= 0.30 else PALETTE["secondary"] if g >= 0.10
               else PALETTE["muted"] for g in gap]
     axes[1].errorbar(gap, y, xerr=[err_lo, err_hi], fmt='o',
-                       color="black", ecolor="#666666", capsize=3,
+                       color="#E0E0E0", ecolor="#9AA0A6", capsize=3,
                        markersize=8, markerfacecolor="white", markeredgewidth=2)
     for yi, gi, col in zip(y, gap, colors):
         axes[1].plot(gi, yi, 'o', color=col, markersize=8, zorder=3)
-    axes[1].axvline(0, color="#888", linewidth=0.7)
-    axes[1].axvline(0.30, color="#bbb", linewidth=0.5, linestyle="--")
+    axes[1].axvline(0, color="#666666", linewidth=0.7)
+    axes[1].axvline(0.30, color="#444444", linewidth=0.5, linestyle="--")
     axes[1].set_yticks(y); axes[1].set_yticklabels([])
     axes[1].set_xlim(-0.05, 0.55)
     axes[1].set_xlabel("Want − Use (percentage points)")
@@ -125,7 +136,7 @@ def fig1_aspiration_inversion(findings):
                   fontsize=14, fontweight="bold", y=1.0, x=0.06, ha="left")
     fig.text(0.06, -0.02,
              f"n = 930. McNemar p < 1e-66 for the four analytical tasks. Cluster bootstrap resamples whole `ref` strata.",
-             fontsize=8.5, color="#666")
+             fontsize=8.5, color="#9AA0A6")
     save(fig, "fig1_aspiration_inversion")
 
 
@@ -160,7 +171,7 @@ def fig2_comfort_readiness_heatmap(df, findings):
     cbar.set_label("Predicted use_count (Poisson)")
     # overlay scatter of actual respondents
     ax.scatter(sub["person_ai_comfort"], sub["readiness_additive"],
-                s=6, color="#222", alpha=0.15)
+                s=6, color="#DDDDDD", alpha=0.15)
     # contours
     cs = ax.contour(Cz, Rz, expected, levels=[1, 2, 3, 4], colors="white", linewidths=1)
     ax.clabel(cs, inline=True, fontsize=8, fmt="%.0f")
@@ -170,7 +181,7 @@ def fig2_comfort_readiness_heatmap(df, findings):
                   loc="left")
     ax.text(0.05, -0.16,
             f"Poisson GLM (n=878). β_comfort = +{b_c:.2f}, β_readiness = +{b_r:.2f}, β_interaction = {b_int:.2f} (p=0.025)",
-            transform=ax.transAxes, fontsize=8.5, color="#666")
+            transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig2_comfort_readiness_heatmap")
 
 
@@ -220,11 +231,11 @@ def fig3_lca_profile(df):
     colors = [PALETTE["skeptic"], PALETTE["late"], PALETTE["consumer"]][: len(order)]
     for col, label, color in zip(probs.columns, labels, colors):
         ax.plot(x, probs[col], marker="o", linewidth=2, label=label, color=color)
-    ax.axvline(len(u_cols) - 0.5, color="#888", linestyle="--", linewidth=0.7)
+    ax.axvline(len(u_cols) - 0.5, color="#666666", linestyle="--", linewidth=0.7)
     ax.text(len(u_cols)/2 - 0.5, 1.04, "Currently uses AI for…",
-            ha="center", fontsize=9, color="#444", transform=ax.get_xaxis_transform())
+            ha="center", fontsize=9, color="#CCCCCC", transform=ax.get_xaxis_transform())
     ax.text(len(u_cols) + len(w_cols)/2 - 0.5, 1.04, "Wants to use AI for…",
-            ha="center", fontsize=9, color="#444", transform=ax.get_xaxis_transform())
+            ha="center", fontsize=9, color="#CCCCCC", transform=ax.get_xaxis_transform())
     ax.set_xticks(x); ax.set_xticklabels(item_labels, rotation=45, ha="right")
     ax.set_ylabel("P(item = 1 | class)")
     ax.set_ylim(0, 1.05)
@@ -232,7 +243,7 @@ def fig3_lca_profile(df):
                   loc="left")
     ax.legend(loc="lower right", frameon=False)
     ax.text(0, -0.55, "stepmix LCA, BIC=13131. Modal class is Aspirational: low use across all items, high want across analytical items.",
-            transform=ax.transAxes, fontsize=8.5, color="#666")
+            transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig3_lca_profile")
 
 
@@ -250,8 +261,8 @@ def fig4_oaxaca_smallorg(findings):
                    "Total raw gap"]
     values = [oax["endowments"], oax["coefficients"], oax["interaction"], oax["raw_gap"]]
     colors = [PALETTE["secondary"], PALETTE["accent"], PALETTE["muted"], PALETTE["primary"]]
-    bars = ax.bar(components, values, color=colors, edgecolor="white")
-    ax.axhline(0, color="black", linewidth=0.6)
+    bars = ax.bar(components, values, color=colors, edgecolor="#1A1D24")
+    ax.axhline(0, color="#E0E0E0", linewidth=0.6)
     for b, v in zip(bars, values):
         ax.text(b.get_x() + b.get_width()/2, v + 0.02,
                  f"{v:+.2f}", ha="center", fontsize=10, fontweight="bold")
@@ -259,7 +270,7 @@ def fig4_oaxaca_smallorg(findings):
     ax.set_title("Oaxaca–Blinder decomposition: small no-tech orgs, GS use MORE AI than GN",
                   loc="left")
     ax.text(0, -0.38, f"n = {oax['n']}. Subset: org_size ≤15 AND tech_person == 0. PSM and IPW agree (3/3 robustness checks confirm).",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     ax.set_ylim(-0.25, max(values) * 1.18)
     save(fig, "fig4_oaxaca_smallorg")
 
@@ -297,18 +308,18 @@ def fig5_irt_readiness(findings):
     a = list(h7["discrimination"].values())
     b = list(h7["difficulty"].values())
     fig, ax = plt.subplots(figsize=(9, 6))
-    sc = ax.scatter(b, a, s=80, color=PALETTE["accent"], edgecolor="black", linewidth=0.8)
+    sc = ax.scatter(b, a, s=80, color=PALETTE["accent"], edgecolor="#E0E0E0", linewidth=0.8)
     for short_label, x, y in zip(short, b, a):
         ax.annotate(short_label, (x, y), xytext=(5, 5), textcoords="offset points",
                      fontsize=8.5)
-    ax.axhline(1, color="#888", linewidth=0.7, linestyle="--")
-    ax.axvline(0, color="#888", linewidth=0.7)
+    ax.axhline(1, color="#666666", linewidth=0.7, linestyle="--")
+    ax.axvline(0, color="#666666", linewidth=0.7)
     ax.set_xlabel("Difficulty (β; higher = rarer)")
     ax.set_ylabel("Discrimination (α; higher = better separator)")
     ax.set_title("2-PL IRT on readiness items: tech_person is the strongest separator",
                   loc="left")
     ax.text(0, -0.18, "girth.twopl_mml on 10 binary readiness items (n=886). All α > 0.46 → readiness IS unidimensional.",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig5_irt_readiness")
 
 
@@ -337,11 +348,11 @@ def fig6_comfort_dominates(findings):
     err_hi = [h - c for c, h in zip(cs, his)]
     colors = [PALETTE["primary"] if p < 0.001 else PALETTE["accent"] if p < 0.05 else PALETTE["muted"]
               for p in ps]
-    ax.errorbar(cs, y, xerr=[err_lo, err_hi], fmt='o', color="#666",
-                  ecolor="#888", capsize=3, markersize=8)
+    ax.errorbar(cs, y, xerr=[err_lo, err_hi], fmt='o', color="#9AA0A6",
+                  ecolor="#666666", capsize=3, markersize=8)
     for yi, ci, col in zip(y, cs, colors):
         ax.plot(ci, yi, 'o', color=col, markersize=10, zorder=3)
-    ax.axvline(0, color="#888", linewidth=0.7)
+    ax.axvline(0, color="#666666", linewidth=0.7)
     ax.set_yticks(y); ax.set_yticklabels([nice[k] for k in keys])
     ax.set_xlabel("β (regression coefficient on use_count, 95% CI)")
     ax.set_title("Comfort dominates structural predictors of AI use",
@@ -350,7 +361,7 @@ def fig6_comfort_dominates(findings):
         sig = "***" if p < 0.001 else "*" if p < 0.05 else "n.s."
         ax.text(max(his) * 1.02, yi, sig, va="center", fontsize=10, fontweight="bold")
     ax.text(0, -0.45, "MixedLM (n=860, ref random intercept; ICC=0 because n_groups=4 — degenerates to OLS).",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig6_comfort_dominates")
 
 
@@ -364,8 +375,8 @@ def fig7_ipw_invariance(findings):
     fig, ax = plt.subplots(figsize=(8, 5))
     x = np.arange(len(df))
     width = 0.35
-    ax.bar(x - width/2, df["gap_unweighted"], width, color=PALETTE["muted"], label="Unweighted", edgecolor="white")
-    ax.bar(x + width/2, df["gap_weighted"], width, color=PALETTE["accent"], label="IPW-weighted", edgecolor="white")
+    ax.bar(x - width/2, df["gap_unweighted"], width, color=PALETTE["muted"], label="Unweighted", edgecolor="#1A1D24")
+    ax.bar(x + width/2, df["gap_weighted"], width, color=PALETTE["accent"], label="IPW-weighted", edgecolor="#1A1D24")
     ax.set_xticks(x); ax.set_xticklabels(df["task"], rotation=30, ha="right")
     ax.set_ylabel("Want − Use (pp)")
     ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1.0))
@@ -373,7 +384,7 @@ def fig7_ipw_invariance(findings):
                   loc="left")
     ax.legend(frameon=False)
     ax.text(0, -0.30, "IPW reweights to {gt: 60%, india: 25%, tech: 10%, hubs: 5%}. Per-task gaps differ by < 0.5pp.",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig7_ipw_invariance")
 
 
@@ -401,7 +412,7 @@ def fig8_robustness_matrix():
     n_cols = len(cols)
     M_arr = np.array([r[1] for r in rows])
     fig, ax = plt.subplots(figsize=(10, 0.5 + 0.42 * n_rows))
-    cmap = mpl.colors.ListedColormap(["white", "#FCEAD0", PALETTE["consumer"]])
+    cmap = mpl.colors.ListedColormap([PALETTE["background"], "#7C5C28", PALETTE["consumer"]])
     bounds = [-0.5, 0.25, 0.75, 1.5]
     norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
     ax.imshow(M_arr, cmap=cmap, norm=norm, aspect="auto")
@@ -411,18 +422,18 @@ def fig8_robustness_matrix():
         for j in range(n_cols):
             v = M_arr[i, j]
             if v == 1:
-                ax.text(j, i, "✓", ha="center", va="center", fontweight="bold")
+                ax.text(j, i, "✓", ha="center", va="center", fontweight="bold", color="#1A1D24")
             elif v == 0.5:
-                ax.text(j, i, "~", ha="center", va="center", fontweight="bold", color="#444")
+                ax.text(j, i, "~", ha="center", va="center", fontweight="bold", color="#F1C40F")
             else:
-                ax.text(j, i, "·", ha="center", va="center", color="#999")
+                ax.text(j, i, "·", ha="center", va="center", color="#666666")
     ax.set_title("Robustness matrix: every headline finding × six checks",
                   loc="left")
     ax.text(0, -0.08, "✓ = pass, ~ = partial (one subgroup fails), · = not applicable",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     ax.set_xticks(np.arange(n_cols + 1) - 0.5, minor=True)
     ax.set_yticks(np.arange(n_rows + 1) - 0.5, minor=True)
-    ax.grid(which="minor", color="#ccc", linestyle="-", linewidth=0.5)
+    ax.grid(which="minor", color="#444444", linestyle="-", linewidth=0.5)
     ax.tick_params(which="minor", bottom=False, left=False)
     save(fig, "fig8_robustness_matrix")
 
@@ -452,14 +463,14 @@ def fig9_forest(findings):
         ax.plot([lo, hi], [y[i]] * 2, color=col, linewidth=2)
         ax.plot(est, y[i], "o", markersize=8, color=col)
         ax.text(0.55, y[i], sig, fontsize=10, fontweight="bold", va="center")
-    ax.axvline(0, color="#888", linewidth=0.7)
+    ax.axvline(0, color="#666666", linewidth=0.7)
     ax.set_yticks(y); ax.set_yticklabels([r[0] for r in rows])
     ax.set_xlabel("Effect size (95% CI)")
     ax.set_xlim(-0.2, 0.65)
     ax.set_title("Forest plot: effect sizes across the 11 headline findings",
                   loc="left")
     ax.text(0, -0.10, "Effect sizes are on different scales (gap = pp, β = log-odds or rate); ordered by magnitude. *** p<0.001, * p<0.05.",
-             transform=ax.transAxes, fontsize=8.5, color="#666")
+             transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig9_forest")
 
 
@@ -493,7 +504,7 @@ def fig10_cluster_profile(df):
             if m in ("use_count", "want_count"):
                 v = v / 7  # both range 0-7
             normalized.append(v)
-        ax.bar(x + (i - 1) * width, normalized, width, label=label, color=cs[i], edgecolor="white")
+        ax.bar(x + (i - 1) * width, normalized, width, label=label, color=cs[i], edgecolor="#1A1D24")
     ax.set_xticks(x)
     ax.set_xticklabels([nice_m[m] for m in metrics], rotation=25, ha="right")
     ax.set_ylim(0, 1)
@@ -503,7 +514,7 @@ def fig10_cluster_profile(df):
     ax.legend(frameon=False, loc="upper left")
     ax.text(0, -0.30,
             "Cluster3 from HDBSCAN/UMAP. Note: Late Adopters score *higher* on cloud_storage and data_use_policy than Skeptics.",
-            transform=ax.transAxes, fontsize=8.5, color="#666")
+            transform=ax.transAxes, fontsize=8.5, color="#9AA0A6")
     save(fig, "fig10_cluster_profile")
 
 
