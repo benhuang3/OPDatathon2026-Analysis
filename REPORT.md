@@ -31,6 +31,18 @@ In the subset of small (≤15 staff) no-tech-person orgs, GS respondents use 0.4
 
 The mechanism is plausible: consumer LLMs (ChatGPT, free tiers) are accessible without infrastructure investment, and small GS orgs without an internal tech specialist have nothing to integrate against — they can use what's free. Small GN orgs without a tech specialist may be working around legacy systems that don't talk to AI.
 
+## Why this matters
+
+**The dominant capacity-building playbook is aimed at the wrong bottleneck.** Foundation and government funding for "nonprofit AI readiness" still routes mostly through infrastructure: cloud credits, data platforms, integration grants, technical-staff hiring. The data here say that for the median nonprofit those line items are not the binding constraint. Late Adopters — the willing-but-not-using middle — already have higher cloud and policy adoption than Skeptics. What they don't have is a working mental model of what AI is and what it would do for them. Money spent provisioning infrastructure for organizations that can't yet articulate a use case will sit idle.
+
+**The aspiration gap is on the analytical tasks that actually move outcomes.** Generative content (drafting, translation) is useful but largely a productivity affordance. The four tasks with the biggest gaps — predict, interpret, assist, organize — are the ones that would let a small org run a needs assessment, target a program, or close the loop on M&E without hiring a data team. A 35–41 point gap between *want* and *use* on those tasks is the difference between AI as a writing tool and AI as a programmatic capability. Closing it is where the social-sector return compounds.
+
+**The Global North/South finding overturns a default assumption that drives funding logic.** "Small + no tech specialist + Global South" is the canonical lagging cohort under the digital-divide framework that underpins most North-to-South capacity grants. On the consumer-LLM stack, that cohort is leading, not lagging. If funders calibrate AI programs to the previous-decade digital-divide map, they will spend most of the budget bringing infrastructure to organizations that are already using AI through free tiers, while underfunding localization, language coverage, and comprehension support that *will* matter as the analytical wave arrives.
+
+**Comprehension is upstream of comfort, comfort is upstream of infrastructure use.** The dependency runs in one direction. A nonprofit that doesn't understand AI cannot productively consume infrastructure built for it; an organization with comfort but no infrastructure can still extract value from free tiers. This re-orders the standard intervention sequence — training first, tooling second — and contradicts the order most current programs use.
+
+**The vigilance/comfort split is a real risk for poorly-designed training.** Comfort and risk-awareness move in opposite directions in the data: hands-on use raises vigilance; subjective comfort lowers it. Programs that hand respondents a chatbot and a "you are now AI-ready" certificate will produce confidence without calibration. That is the failure mode most likely to surface as misuse incidents two years from now, and it is preventable at training-design time.
+
 ## What follows
 
 The bottleneck on closing the aspiration gap is *comprehension and comfort*, not infrastructure or geography. Capacity-building investment for nonprofit AI should:
