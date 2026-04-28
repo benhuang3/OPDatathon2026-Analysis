@@ -112,7 +112,7 @@ def fig1_aspiration_inversion(findings):
     axes[0].set_xlabel("Share of respondents")
     axes[0].xaxis.set_major_formatter(mpl.ticker.PercentFormatter(1.0))
     axes[0].set_title("Today's use vs aspiration", loc="left")
-    axes[0].legend(loc="lower right", frameon=False)
+    axes[0].legend(loc="center right", bbox_to_anchor=(0.92, 0.42), frameon=False)
 
     # Right panel — gap with CI
     err_lo = [g - l for g, l in zip(gap, lo)]
@@ -241,7 +241,7 @@ def fig3_lca_profile(df):
     ax.set_ylim(0, 1.05)
     ax.set_title("LCA k=3 item-response profile: a willing-but-not-using middle class",
                   loc="left", pad=18)
-    ax.legend(loc="lower right", frameon=False)
+    ax.legend(loc="lower right", bbox_to_anchor=(1.0, 0.22), frameon=False)
     ax.text(0, -0.38, "stepmix LCA, BIC=13131. Modal class is Aspirational: low use across all items, high want across analytical items.",
             transform=ax.transAxes, fontsize=8.5, color="#B5A0AB")
     save(fig, "fig3_lca_profile")
