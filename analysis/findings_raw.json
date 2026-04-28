@@ -1,0 +1,1179 @@
+[
+  {
+    "id": "H1",
+    "title": "Aspiration inversion (paired multilevel, cluster bootstrap CI)",
+    "method": "paired_mcnemar_cluster_boot",
+    "per_task": {
+      "n": {
+        "Ask": 930,
+        "Assist": 930,
+        "Generat": 930,
+        "Interpret": 930,
+        "Organi": 930,
+        "Predict": 930,
+        "Translat": 930
+      },
+      "use_pct": {
+        "Ask": 0.32688172043010755,
+        "Assist": 0.16129032258064516,
+        "Generat": 0.5387096774193548,
+        "Interpret": 0.15268817204301074,
+        "Organi": 0.1913978494623656,
+        "Predict": 0.11182795698924732,
+        "Translat": 0.24408602150537634
+      },
+      "want_pct": {
+        "Ask": 0.3946236559139785,
+        "Assist": 0.556989247311828,
+        "Generat": 0.5494623655913978,
+        "Interpret": 0.4989247311827957,
+        "Organi": 0.603225806451613,
+        "Predict": 0.5172043010752688,
+        "Translat": 0.3903225806451613
+      },
+      "gap": {
+        "Ask": 0.06774193548387097,
+        "Assist": 0.39569892473118284,
+        "Generat": 0.010752688172043001,
+        "Interpret": 0.3462365591397849,
+        "Organi": 0.41182795698924735,
+        "Predict": 0.4053763440860215,
+        "Translat": 0.14623655913978495
+      },
+      "ci_lo": {
+        "Ask": -0.046153846153846156,
+        "Assist": 0.3794162826420891,
+        "Generat": -0.11538461538461531,
+        "Interpret": 0.33698788228505483,
+        "Organi": 0.36795252225519287,
+        "Predict": 0.3871898442008079,
+        "Translat": 0.13359528487229866
+      },
+      "ci_hi": {
+        "Ask": 0.14237288135593218,
+        "Assist": 0.4769230769230769,
+        "Generat": 0.044067796610169574,
+        "Interpret": 0.3999999999999999,
+        "Organi": 0.44493392070484583,
+        "Predict": 0.4769230769230769,
+        "Translat": 0.15177065767284992
+      },
+      "use_only": {
+        "Ask": 113,
+        "Assist": 41,
+        "Generat": 155,
+        "Interpret": 39,
+        "Organi": 47,
+        "Predict": 27,
+        "Translat": 79
+      },
+      "want_only": {
+        "Ask": 176,
+        "Assist": 409,
+        "Generat": 165,
+        "Interpret": 361,
+        "Organi": 430,
+        "Predict": 404,
+        "Translat": 215
+      },
+      "mcnemar_p": {
+        "Ask": 0.0002520044022984455,
+        "Assist": 2.1094976924285316e-77,
+        "Generat": 0.6149524312082372,
+        "Interpret": 1.8943199584770717e-66,
+        "Organi": 1.6578888240160406e-78,
+        "Predict": 2.0879437680497364e-87,
+        "Translat": 1.0481044454102615e-15
+      },
+      "p_fdr": {
+        "Ask": 0.00029400513601485304,
+        "Assist": 4.9221612823332404e-77,
+        "Generat": 0.6149524312082372,
+        "Interpret": 3.3150599273348757e-66,
+        "Organi": 5.802610884056143e-78,
+        "Predict": 1.4615606376348154e-86,
+        "Translat": 1.467346223574366e-15
+      }
+    },
+    "pre_registered": "yes",
+    "confirms": [
+      "Predict gap",
+      0.4053763440860215,
+      "FDR p",
+      1.4615606376348154e-86
+    ]
+  },
+  {
+    "id": "H7",
+    "title": "2PL IRT on readiness items",
+    "method": "girth.twopl_mml",
+    "n": 886,
+    "discrimination": {
+      "tech_person": 2.42648582511744,
+      "merl_person": 1.2248111181788428,
+      "cloud_storage": 1.01928327977414,
+      "data_use_policy": 1.1174157351367804,
+      "org_agreements": 1.525620650641902,
+      "[D] Our staff manually fill out spreadsheets (or other tabular data) from notes and observations.": 0.4606592403500008,
+      "[D] Our staff uses software to collect data about people, relationships, prospects, etc.": 1.1523941346682958,
+      "[D] We also retained the original audio or video that accompanies the transcripts and tabular data.": 1.200452185188168,
+      "[D] We collect data using devices, such as phones, tablets,  or computers, and people submit/update information electronically.": 0.9727814323330793,
+      "[D] We have at least a hundred transcripts or records of interviews, testimonials, meetings, proceedings, surveys, or similar.": 1.1815976589640587
+    },
+    "difficulty": {
+      "tech_person": 0.6807743140742799,
+      "merl_person": 0.30781220355935446,
+      "cloud_storage": -0.8862025896769857,
+      "data_use_policy": -1.0449635863678357,
+      "org_agreements": 0.8480878507211356,
+      "[D] Our staff manually fill out spreadsheets (or other tabular data) from notes and observations.": -1.343874771145279,
+      "[D] Our staff uses software to collect data about people, relationships, prospects, etc.": 0.2141699018712637,
+      "[D] We also retained the original audio or video that accompanies the transcripts and tabular data.": 1.4024362971271465,
+      "[D] We collect data using devices, such as phones, tablets,  or computers, and people submit/update information electronically.": -0.3643844834476801,
+      "[D] We have at least a hundred transcripts or records of interviews, testimonials, meetings, proceedings, surveys, or similar.": 1.0671523749683955
+    },
+    "min_alpha": 0.4606592403500008,
+    "max_alpha": 2.42648582511744,
+    "pre_registered": "yes",
+    "confirms": "all alpha > 0"
+  },
+  {
+    "id": "H2",
+    "title": "LCA replacement of K-means typology",
+    "method": "stepmix.StepMix",
+    "best_k": 6,
+    "fit_table": {
+      "n_params": {
+        "2": 39,
+        "3": 59,
+        "4": 79,
+        "5": 99,
+        "6": 119
+      },
+      "ll": {
+        "2": -9522.23705300911,
+        "3": -9210.669783370979,
+        "4": -9029.914787118436,
+        "5": -8896.441172147983,
+        "6": -8824.00925332405
+      },
+      "aic": {
+        "2": 19122.47410601822,
+        "3": 18539.339566741957,
+        "4": 18217.829574236872,
+        "5": 17990.882344295966,
+        "6": 17886.0185066481
+      },
+      "bic": {
+        "2": 19311.046304877964,
+        "3": 18824.61545732465,
+        "4": 18599.80915654251,
+        "5": 18469.56561832455,
+        "6": 18461.405472399627
+      },
+      "entropy_R2": {
+        "2": 0.8488055210094678,
+        "3": 0.8605308530344924,
+        "4": 0.859384294398145,
+        "5": 0.8514213436803261,
+        "6": 0.8466839460944955
+      },
+      "n_per_class": {
+        "2": {
+          "0": 511,
+          "1": 419
+        },
+        "3": {
+          "0": 521,
+          "1": 154,
+          "2": 255
+        },
+        "4": {
+          "0": 287,
+          "1": 438,
+          "2": 74,
+          "3": 131
+        },
+        "5": {
+          "0": 310,
+          "1": 318,
+          "2": 70,
+          "3": 56,
+          "4": 176
+        },
+        "6": {
+          "0": 252,
+          "1": 174,
+          "2": 253,
+          "3": 109,
+          "4": 86,
+          "5": 56
+        }
+      }
+    },
+    "crosstab_vs_cluster3": {
+      "-1": {
+        "0.0": 10,
+        "1.0": 59,
+        "2.0": 44,
+        "3.0": 12,
+        "4.0": 7,
+        "5.0": 10
+      },
+      "0": {
+        "0.0": 56,
+        "1.0": 109,
+        "2.0": 84,
+        "3.0": 14,
+        "4.0": 0,
+        "5.0": 2
+      },
+      "1": {
+        "0.0": 186,
+        "1.0": 6,
+        "2.0": 125,
+        "3.0": 83,
+        "4.0": 79,
+        "5.0": 44
+      }
+    },
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H3",
+    "title": "Continuous comfort \u00d7 readiness interaction (Poisson)",
+    "method": "GLM Poisson",
+    "n": 878,
+    "params": {
+      "const": 0.36770269226359936,
+      "comfort_z": 0.5532586306736484,
+      "readiness_z": 0.3130348225764234,
+      "interaction": -0.06930202281989857
+    },
+    "pvalues": {
+      "const": 9.259406551123655e-33,
+      "comfort_z": 2.7139292919561413e-63,
+      "readiness_z": 5.429974347095693e-25,
+      "interaction": 0.025407420278357514
+    },
+    "ci_lo": {
+      "const": 0.3072449636450131,
+      "comfort_z": 0.48868875674283807,
+      "readiness_z": 0.253612548811516,
+      "interaction": -0.13007172168075412
+    },
+    "ci_hi": {
+      "const": 0.42816042088218564,
+      "comfort_z": 0.6178285046044588,
+      "readiness_z": 0.3724570963413308,
+      "interaction": -0.008532323959043027
+    },
+    "pre_registered": "yes",
+    "confirms": "interaction p < 0.05"
+  },
+  {
+    "id": "H4",
+    "title": "Mediation rr_attitude \u2192 readiness \u2192 use_count",
+    "method": "causal-step OLS + bootstrap",
+    "a": 0.022723439326854934,
+    "b": 2.4506495807869846,
+    "c_total": 0.2901213271232248,
+    "c_prime": 0.23443414006282895,
+    "indirect": 0.05568718706039552,
+    "indirect_ci": [
+      0.01603946162240031,
+      0.09514857360378332
+    ],
+    "proportion_mediated": 0.19194447927209157,
+    "n": 585,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H5",
+    "title": "F-8 reversal robustness (Oaxaca + PSM + IPW)",
+    "method": "3-method triangulation",
+    "oaxaca": {
+      "raw_gap": 0.42405478937986674,
+      "endowments": 0.2144463111067693,
+      "coefficients": 0.3630868271582123,
+      "interaction": -0.15347834888511402,
+      "n": 455
+    },
+    "psm": {
+      "matched_pairs": 132,
+      "treatment_effect": 0.15151515151515152
+    },
+    "ipw": {
+      "weighted_means_by_isS": {
+        "0": 1.151702786377709,
+        "1": 1.575757575757576
+      },
+      "ipw_gap": 0.42405478937986696
+    },
+    "confirm_count": 3,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H6",
+    "title": "Re-derived typology (LCA on [U]+[W])",
+    "method": "stepmix Bernoulli LCA",
+    "best_k": 5,
+    "fit_table": {
+      "n_params": {
+        "2": 29,
+        "3": 44,
+        "4": 59,
+        "5": 74
+      },
+      "ll": {
+        "2": -6707.006573243938,
+        "3": -6415.3762851712945,
+        "4": -6243.1115620823975,
+        "5": -6126.986146586069
+      },
+      "aic": {
+        "2": 13472.013146487876,
+        "3": 12918.752570342589,
+        "4": 12604.223124164795,
+        "5": 12401.972293172137
+      },
+      "bic": {
+        "2": 13612.233499486149,
+        "3": 13131.50069213307,
+        "4": 12889.499014747485,
+        "5": 12759.775952547037
+      },
+      "entropy_R2": {
+        "2": 0.8522777178846396,
+        "3": 0.8469367273522402,
+        "4": 0.8509100608835752,
+        "5": 0.8468466362461284
+      },
+      "n_per_class": {
+        "2": {
+          "0": 385,
+          "1": 545
+        },
+        "3": {
+          "0": 234,
+          "1": 489,
+          "2": 207
+        },
+        "4": {
+          "0": 271,
+          "1": 452,
+          "2": 82,
+          "3": 125
+        },
+        "5": {
+          "0": 298,
+          "1": 168,
+          "2": 344,
+          "3": 66,
+          "4": 54
+        }
+      }
+    },
+    "k3_sizes": {
+      "0": 234,
+      "1": 489,
+      "2": 207
+    },
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H8",
+    "title": "TOE SEM (failed)",
+    "error": "Eigenvalues did not converge",
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H9",
+    "title": "Risk perception 2-factor structure",
+    "method": "FactorAnalysis n=2",
+    "loadings": {
+      "F1": {
+        "bias": 0.2551237866677532,
+        "breaches": 0.2848224053075816,
+        "replacing": 0.22136393120411726,
+        "inequity": 0.23534643733434416,
+        "plagiarism": 0.29012917990719345,
+        "dependency": 0.25274599749056476,
+        "env": 0.21189654145842118
+      },
+      "F2": {
+        "bias": -0.02509618711481155,
+        "breaches": -0.12857224167023387,
+        "replacing": 0.1088445911313059,
+        "inequity": -0.006618203555735025,
+        "plagiarism": -0.05500836137178308,
+        "dependency": 0.04799379000596718,
+        "env": 0.12220707452582522
+      }
+    },
+    "n": 930,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H13",
+    "title": "Africa: hubs vs non-hubs use_count",
+    "method": "Mann-Whitney",
+    "n_hubs": 19,
+    "n_nonhubs": 41,
+    "mean_hubs": 2.6315789473684212,
+    "mean_nonhubs": 1.6585365853658536,
+    "p": 0.05482204331414152,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H23",
+    "title": "F-1 inversion under IPW vs unweighted",
+    "method": "IPW reweight on ref",
+    "per_task": [
+      {
+        "task": "Ask",
+        "u_weighted": 0.32878760780305577,
+        "w_weighted": 0.3932221828383275,
+        "gap_weighted": 0.06443457503527172,
+        "u_unweighted": 0.32688172043010755,
+        "w_unweighted": 0.3946236559139785,
+        "gap_unweighted": 0.06774193548387097
+      },
+      {
+        "task": "Assist",
+        "u_weighted": 0.16225829477063958,
+        "w_weighted": 0.5591951180018658,
+        "gap_weighted": 0.39693682323122625,
+        "u_unweighted": 0.16129032258064516,
+        "w_unweighted": 0.556989247311828,
+        "gap_unweighted": 0.39569892473118284
+      },
+      {
+        "task": "Generat",
+        "u_weighted": 0.5401155587449299,
+        "w_weighted": 0.5485253000175961,
+        "gap_weighted": 0.008409741272666249,
+        "u_unweighted": 0.5387096774193548,
+        "w_unweighted": 0.5494623655913978,
+        "gap_unweighted": 0.010752688172043001
+      },
+      {
+        "task": "Interpret",
+        "u_weighted": 0.15271650663258082,
+        "w_weighted": 0.4994033483782265,
+        "gap_weighted": 0.3466868417456457,
+        "u_unweighted": 0.15268817204301074,
+        "w_unweighted": 0.4989247311827957,
+        "gap_unweighted": 0.3462365591397849
+      },
+      {
+        "task": "Organi",
+        "u_weighted": 0.1904308452715093,
+        "w_weighted": 0.6031232324137523,
+        "gap_weighted": 0.412692387142243,
+        "u_unweighted": 0.1913978494623656,
+        "w_unweighted": 0.603225806451613,
+        "gap_unweighted": 0.41182795698924735
+      },
+      {
+        "task": "Predict",
+        "u_weighted": 0.11174527389811126,
+        "w_weighted": 0.5173731988944832,
+        "gap_weighted": 0.4056279249963719,
+        "u_unweighted": 0.11182795698924732,
+        "w_unweighted": 0.5172043010752688,
+        "gap_unweighted": 0.4053763440860215
+      },
+      {
+        "task": "Translat",
+        "u_weighted": 0.24248865568928438,
+        "w_weighted": 0.3888048391008339,
+        "gap_weighted": 0.14631618341154953,
+        "u_unweighted": 0.24408602150537634,
+        "w_unweighted": 0.3903225806451613,
+        "gap_unweighted": 0.14623655913978495
+      }
+    ],
+    "effective_n": 927.7824008414235,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H24",
+    "title": "MCA + Louvain on [D] + infra",
+    "method": "prince MCA + python-louvain",
+    "n": 886,
+    "n_communities": 1,
+    "communities": {
+      "[D] Our staff manually fill out spreadsheets (or other tabular data) from notes and observations.": 0,
+      "[D] Our staff uses software to collect data about people, relationships, prospects, etc.": 0,
+      "[D] We also retained the original audio or video that accompanies the transcripts and tabular data.": 0,
+      "[D] We collect data using devices, such as phones, tablets,  or computers, and people submit/update information electronically.": 0,
+      "[D] We have at least a hundred transcripts or records of interviews, testimonials, meetings, proceedings, surveys, or similar.": 0,
+      "tech_person": 0,
+      "merl_person": 0,
+      "cloud_storage": 0,
+      "data_use_policy": 0,
+      "org_agreements": 0
+    },
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H26",
+    "title": "IRT vs additive readiness for use_count",
+    "method": "Poisson GLM AIC compare",
+    "aic_additive": 3190.9436407359726,
+    "aic_irt": 3174.898006028424,
+    "delta_aic": 16.045634707548743,
+    "beta_additive": 1.5225211313048594,
+    "beta_irt": 0.44996949712264955,
+    "n": 886,
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H10a",
+    "title": "Comfort grows with use (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "person_ai_comfort ~ use_count + org_size_int + tech_person",
+    "n": 860,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": 5.4192985975842625e-17,
+        "use_count": 0.06757542169584574,
+        "org_size_int": 0.01252710643291853,
+        "tech_person": 0.02200683838106471
+      },
+      "se": {
+        "Intercept": 219565.83043152504,
+        "use_count": 0.005017521340364575,
+        "org_size_int": 0.006040888042419477,
+        "tech_person": 0.021289014057740623
+      },
+      "z": {
+        "Intercept": 2.4681885095387617e-22,
+        "use_count": 13.467889244878764,
+        "org_size_int": 2.0737193513523904,
+        "tech_person": 1.0337180632873455
+      },
+      "p": {
+        "Intercept": 1.0,
+        "use_count": 2.4167644957882434e-41,
+        "org_size_int": 0.038105382944971705,
+        "tech_person": 0.30126798608943084
+      },
+      "ci_lo": {
+        "Intercept": -430341.11988141766,
+        "use_count": 0.05774126057707003,
+        "org_size_int": 0.0006871834351376855,
+        "tech_person": -0.01971886243847383
+      },
+      "ci_hi": {
+        "Intercept": 430341.11988141766,
+        "use_count": 0.07740958281462144,
+        "org_size_int": 0.024367029430699377,
+        "tech_person": 0.06373253920060325
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H10b",
+    "title": "Vigilance grows with use net of comfort (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "risk_count ~ use_count + person_ai_comfort + org_size_int",
+    "n": 877,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": 1.0424918446480044e-14,
+        "use_count": 0.2597534405521744,
+        "person_ai_comfort": -1.7443019798932726,
+        "org_size_int": 0.11015949422566752
+      },
+      "se": {
+        "Intercept": NaN,
+        "use_count": 0.04135126924569903,
+        "person_ai_comfort": 0.2625080482181555,
+        "org_size_int": 0.0441208651775762
+      },
+      "z": {
+        "Intercept": NaN,
+        "use_count": 6.281631623174216,
+        "person_ai_comfort": -6.644756195984066,
+        "org_size_int": 2.4967664115901
+      },
+      "p": {
+        "Intercept": NaN,
+        "use_count": 3.3503796865161497e-10,
+        "person_ai_comfort": 3.0371938756659454e-11,
+        "org_size_int": 0.01253314850251436
+      },
+      "ci_lo": {
+        "Intercept": NaN,
+        "use_count": 0.17870644211558556,
+        "person_ai_comfort": -2.2588083000527615,
+        "org_size_int": 0.023684187510870758
+      },
+      "ci_hi": {
+        "Intercept": NaN,
+        "use_count": 0.3408004389887633,
+        "person_ai_comfort": -1.2297956597337838,
+        "org_size_int": 0.1966348009404643
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H11",
+    "title": "Comprehension is stronger predictor than risk count (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "low_use ~ rr_dont_understand + risk_count + person_ai_comfort",
+    "n": 878,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": -1.0704849484306646e-14,
+        "rr_dont_understand": 0.1606788450751518,
+        "risk_count": -0.017847510489470565,
+        "person_ai_comfort": -0.6801145095522398
+      },
+      "se": {
+        "Intercept": 333805.49229264475,
+        "rr_dont_understand": 0.03015653814345925,
+        "risk_count": 0.006841220695529329,
+        "person_ai_comfort": 0.050730772277707954
+      },
+      "z": {
+        "Intercept": -3.206912328129636e-20,
+        "rr_dont_understand": 5.328159495986509,
+        "risk_count": -2.6088195782272803,
+        "person_ai_comfort": -13.406350406597197
+      },
+      "p": {
+        "Intercept": 1.0,
+        "rr_dont_understand": 9.921298373291001e-08,
+        "risk_count": 0.009085513135535803,
+        "person_ai_comfort": 5.550371133689184e-41
+      },
+      "ci_lo": {
+        "Intercept": -654246.7427352463,
+        "rr_dont_understand": 0.10157311641556327,
+        "risk_count": -0.031256056662998105,
+        "person_ai_comfort": -0.7795449961244505
+      },
+      "ci_hi": {
+        "Intercept": 654246.7427352463,
+        "rr_dont_understand": 0.2197845737347403,
+        "risk_count": -0.004438964315943022,
+        "person_ai_comfort": -0.5806840229800292
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H12",
+    "title": "Aspiration gap robustness across causes (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "gap ~ org_size_int + tech_person",
+    "n": 902,
+    "n_groups": 24,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": -8.800599340733886e-17,
+        "org_size_int": 0.1941734526654177,
+        "tech_person": -0.6485381889603712
+      },
+      "se": {
+        "Intercept": 5927159.000930142,
+        "org_size_int": 0.0542852911057177,
+        "tech_person": 0.18837908856576396
+      },
+      "z": {
+        "Intercept": -1.484792181102754e-23,
+        "org_size_int": 3.5769072747031103,
+        "tech_person": -3.442729200454559
+      },
+      "p": {
+        "Intercept": 1.0,
+        "org_size_int": 0.00034768343504206975,
+        "tech_person": 0.0005758756462160141
+      },
+      "ci_lo": {
+        "Intercept": -11617018.172465486,
+        "org_size_int": 0.08777623720793848,
+        "tech_person": -1.0177544179897495
+      },
+      "ci_hi": {
+        "Intercept": 11617018.172465486,
+        "org_size_int": 0.3005706681228969,
+        "tech_person": -0.27932195993099274
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H14",
+    "title": "Translation [W] over-indexes in GS (multilevel logistic-like via OLS-with-binary)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "Q('[W] Translat') ~ is_S + person_ai_comfort + org_size_int",
+    "n": 877,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": -1.748749842018293e-15,
+        "is_S": 0.06938960657747217,
+        "person_ai_comfort": 0.31230932642173537,
+        "org_size_int": 0.014556608690728584
+      },
+      "se": {
+        "Intercept": NaN,
+        "is_S": 0.05168134150874086,
+        "person_ai_comfort": 0.05755818183723026,
+        "org_size_int": 0.010636918315490301
+      },
+      "z": {
+        "Intercept": NaN,
+        "is_S": 1.34264329353247,
+        "person_ai_comfort": 5.425976228799584,
+        "org_size_int": 1.3684986815711584
+      },
+      "p": {
+        "Intercept": NaN,
+        "is_S": 0.1793875046142266,
+        "person_ai_comfort": 5.763863025327109e-08,
+        "org_size_int": 0.17115603440662785
+      },
+      "ci_lo": {
+        "Intercept": NaN,
+        "is_S": -0.031903961452374854,
+        "person_ai_comfort": 0.19949736300515658,
+        "org_size_int": -0.006291368114126866
+      },
+      "ci_hi": {
+        "Intercept": NaN,
+        "is_S": 0.1706831746073192,
+        "person_ai_comfort": 0.42512128983831415,
+        "org_size_int": 0.035404585495584034
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H15",
+    "title": "India NOT lower-comfort net of size\u00d7tech (multilevel) (failed)",
+    "error": "Singular matrix",
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H17",
+    "title": "Skeptics disengaged not vigilant (multilevel within cluster3=-1)",
+    "method": "MixedLM REML",
+    "n": 124,
+    "fixed": {
+      "coef": {
+        "Intercept": 1.6473736745834622e-15,
+        "use_count": 0.5214515237834451,
+        "person_ai_comfort": -1.6609707930991706,
+        "opentext_len": 0.0008067345159967612
+      },
+      "se": {
+        "Intercept": NaN,
+        "use_count": 0.10575532540337171,
+        "person_ai_comfort": 0.58477331935903,
+        "opentext_len": 0.000996880359777766
+      },
+      "z": {
+        "Intercept": NaN,
+        "use_count": 4.9307353723751115,
+        "person_ai_comfort": -2.840366921869419,
+        "opentext_len": 0.8092591132767487
+      },
+      "p": {
+        "Intercept": NaN,
+        "use_count": 8.192064531787983e-07,
+        "person_ai_comfort": 0.0045061669998794325,
+        "opentext_len": 0.41836611910056487
+      },
+      "ci_lo": {
+        "Intercept": NaN,
+        "use_count": 0.31417489481952265,
+        "person_ai_comfort": -2.8071054381628087,
+        "opentext_len": -0.0011471150860629916
+      },
+      "ci_hi": {
+        "Intercept": NaN,
+        "use_count": 0.7287281527473675,
+        "person_ai_comfort": -0.5148361480355326,
+        "opentext_len": 0.002760584118056514
+      }
+    },
+    "pre_registered": "yes"
+  },
+  {
+    "id": "H18",
+    "title": "Tech_person vs org_size on want_count (multilevel Poisson via OLS-approx)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "want_count ~ tech_person + merl_person + org_size_int + person_ai_comfort",
+    "n": 854,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": 3.8204054090900145e-14,
+        "tech_person": -0.056345824712690146,
+        "merl_person": -0.2581880634738877,
+        "org_size_int": 0.2212961371269399,
+        "person_ai_comfort": 3.259148013385183
+      },
+      "se": {
+        "Intercept": 1889737.6912468844,
+        "tech_person": 0.200416150186037,
+        "merl_person": 0.18168262089024928,
+        "org_size_int": 0.05353959879320662,
+        "person_ai_comfort": 0.2740084942052263
+      },
+      "z": {
+        "Intercept": 2.0216591047455052e-20,
+        "tech_person": -0.2811441326479275,
+        "merl_person": -1.4210938955457593,
+        "org_size_int": 4.133317060923122,
+        "person_ai_comfort": 11.894332045575759
+      },
+      "p": {
+        "Intercept": 1.0,
+        "tech_person": 0.7785998527028735,
+        "merl_person": 0.15528946442161085,
+        "org_size_int": 3.575649200233483e-05,
+        "person_ai_comfort": 1.266623383422391e-32
+      },
+      "ci_lo": {
+        "Intercept": -3703817.815071766,
+        "tech_person": -0.4491542609974931,
+        "merl_person": -0.6142794570356207,
+        "org_size_int": 0.1163604517455308,
+        "person_ai_comfort": 2.7221012332848873
+      },
+      "ci_hi": {
+        "Intercept": 3703817.815071766,
+        "tech_person": 0.3364626115721129,
+        "merl_person": 0.09790333008784535,
+        "org_size_int": 0.32623182250834903,
+        "person_ai_comfort": 3.7961947934854785
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H19",
+    "title": "Policy-without-cloud adopts less (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "Q('use_count') ~ policy_only + both_pc + org_size_int",
+    "n": 925,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": -1.5573167492700051e-15,
+        "policy_only": -0.23392150441610338,
+        "both_pc": 0.6571828754578407,
+        "org_size_int": 0.12165611501691732
+      },
+      "se": {
+        "Intercept": NaN,
+        "policy_only": 0.171270762193659,
+        "both_pc": 0.13968402538960395,
+        "org_size_int": 0.03919055727030752
+      },
+      "z": {
+        "Intercept": NaN,
+        "policy_only": -1.3657994010186283,
+        "both_pc": 4.704781907772483,
+        "org_size_int": 3.1042200849001276
+      },
+      "p": {
+        "Intercept": NaN,
+        "policy_only": 0.17200193446228385,
+        "both_pc": 2.5413747886755888e-06,
+        "org_size_int": 0.0019078135714171547
+      },
+      "ci_lo": {
+        "Intercept": NaN,
+        "policy_only": -0.5696060299203993,
+        "both_pc": 0.38340721647863846,
+        "org_size_int": 0.044844034233060215
+      },
+      "ci_hi": {
+        "Intercept": NaN,
+        "policy_only": 0.10176302108819257,
+        "both_pc": 0.930958534437043,
+        "org_size_int": 0.19846819580077443
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H20",
+    "title": "Org age non-effect on use_count (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "use_count ~ org_years_raw + org_size_int + tech_person",
+    "n": 902,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": 1.1250046187507489e-16,
+        "org_years_raw": -0.001110447772353061,
+        "org_size_int": 0.11544558008684756,
+        "tech_person": 0.8774450551393995
+      },
+      "se": {
+        "Intercept": 2166834.4876080123,
+        "org_years_raw": 0.0014097725575213937,
+        "org_size_int": 0.041410343642618704,
+        "tech_person": 0.13918295325191893
+      },
+      "z": {
+        "Intercept": 5.191926864670921e-23,
+        "org_years_raw": -0.7876786694624034,
+        "org_size_int": 2.787844048896838,
+        "tech_person": 6.304256625100043
+      },
+      "p": {
+        "Intercept": 1.0,
+        "org_years_raw": 0.4308846855019868,
+        "org_size_int": 0.005306007961156569,
+        "tech_person": 2.895803541344594e-10
+      },
+      "ci_lo": {
+        "Intercept": -4246917.5561710065,
+        "org_years_raw": -0.0038735512114879142,
+        "org_size_int": 0.034282797959887715,
+        "tech_person": 0.6046514795037164
+      },
+      "ci_hi": {
+        "Intercept": 4246917.5561710065,
+        "org_years_raw": 0.0016526556667817924,
+        "org_size_int": 0.1966083622138074,
+        "tech_person": 1.1502386307750827
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H21",
+    "title": "Standardized correlates of use_count (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "Q('use_count') ~ person_ai_comfort + readiness_additive + org_size_int + tech_person",
+    "n": 860,
+    "n_groups": 4,
+    "icc": 0.014145082076910911,
+    "fixed": {
+      "coef": {
+        "Intercept": -0.7869735701631386,
+        "person_ai_comfort": 2.530810714136566,
+        "readiness_additive": 1.982702179509378,
+        "org_size_int": 0.013387394819260386,
+        "tech_person": 0.14864381073363128
+      },
+      "se": {
+        "Intercept": 0.20285208751358924,
+        "person_ai_comfort": 0.1878356600858635,
+        "readiness_additive": 0.28457297198086023,
+        "org_size_int": 0.037248565816854026,
+        "tech_person": 0.15047822027999158
+      },
+      "z": {
+        "Intercept": -3.879543857838873,
+        "person_ai_comfort": 13.473536989619975,
+        "readiness_additive": 6.9672891480457615,
+        "org_size_int": 0.3594069872403767,
+        "tech_person": 0.9878094680881588
+      },
+      "p": {
+        "Intercept": 0.00010465253121900516,
+        "person_ai_comfort": 2.2387904644314916e-41,
+        "readiness_additive": 3.23106173318495e-12,
+        "org_size_int": 0.7192906483980213,
+        "tech_person": 0.3232459696920049
+      },
+      "ci_lo": {
+        "Intercept": -1.1845563558785408,
+        "person_ai_comfort": 2.162659585355966,
+        "readiness_additive": 1.424949403453366,
+        "org_size_int": -0.05961845265754328,
+        "tech_person": -0.14628808147283698
+      },
+      "ci_hi": {
+        "Intercept": -0.3893907844477365,
+        "person_ai_comfort": 2.898961842917166,
+        "readiness_additive": 2.54045495556539,
+        "org_size_int": 0.08639324229606404,
+        "tech_person": 0.4435757029400995
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H22",
+    "title": "rr_dont_understand \u2192 late adopter (multilevel)",
+    "method": "MixedLM REML",
+    "pre_registered": "yes",
+    "formula": "is_late_adopter ~ rr_dont_understand + person_ai_comfort + org_size_int",
+    "n": 877,
+    "n_groups": 4,
+    "icc": 0.0,
+    "fixed": {
+      "coef": {
+        "Intercept": 3.003714916644774e-15,
+        "rr_dont_understand": 0.14827533444414598,
+        "person_ai_comfort": -0.5079606212908276,
+        "org_size_int": -0.01187404124470533
+      },
+      "se": {
+        "Intercept": NaN,
+        "rr_dont_understand": 0.030692769335216214,
+        "person_ai_comfort": 0.05108105653343436,
+        "org_size_int": 0.009269569226471848
+      },
+      "z": {
+        "Intercept": NaN,
+        "rr_dont_understand": 4.830953271916656,
+        "person_ai_comfort": -9.944207417838928,
+        "org_size_int": -1.2809701243500813
+      },
+      "p": {
+        "Intercept": NaN,
+        "rr_dont_understand": 1.35880895108693e-06,
+        "person_ai_comfort": 2.672932573947372e-23,
+        "org_size_int": 0.200204159963141
+      },
+      "ci_lo": {
+        "Intercept": NaN,
+        "rr_dont_understand": 0.08811861196132682,
+        "person_ai_comfort": -0.6080776523886134,
+        "org_size_int": -0.03004206308079096
+      },
+      "ci_hi": {
+        "Intercept": NaN,
+        "rr_dont_understand": 0.20843205692696515,
+        "person_ai_comfort": -0.4078435901930419,
+        "org_size_int": 0.0062939805913803
+      }
+    },
+    "converged": true
+  },
+  {
+    "id": "H16",
+    "title": "BERTopic on ai_opentext",
+    "method": "BERTopic + paraphrase-multilingual-MiniLM-L12-v2",
+    "n": 606,
+    "n_topics": 3,
+    "top_topics": {
+      "Topic": {
+        "0": -1,
+        "1": 0,
+        "2": 1
+      },
+      "Count": {
+        "0": 102,
+        "1": 428,
+        "2": 76
+      },
+      "Name": {
+        "0": "-1_to_the_and_it",
+        "1": "0_to_and_ai_the",
+        "2": "1_not_enough_no_know"
+      },
+      "Representation": {
+        "0": [
+          "to",
+          "the",
+          "and",
+          "it",
+          "ai",
+          "that",
+          "of",
+          "in",
+          "we",
+          "for"
+        ],
+        "1": [
+          "to",
+          "and",
+          "ai",
+          "the",
+          "of",
+          "that",
+          "it",
+          "is",
+          "in",
+          "we"
+        ],
+        "2": [
+          "not",
+          "enough",
+          "no",
+          "know",
+          "sure",
+          "have",
+          "don",
+          "it",
+          "about",
+          "this"
+        ]
+      },
+      "Representative_Docs": {
+        "0": [
+          "Chat GPT helped pull together a vast amount of information that helped me create a presentation from its organized collection from disparate, myriad resources. I would have had to read and research for weeks (longer?) to have had such robust information at my fingertips. I will not hesitate to use it again for this purpose.  At the same time, I worry about the environmental impact of data storage. I worry that information is accurate -- so I did not request nor would I have used statistics unless they were credited so I could refer to the source myself. \n\nI hope to use AI to synthesize lots of data and input collected during client interviews to identify themes, commonalities, and differences among stakeholders of a single client.\n\nI hope that AI can make it easier for nonprofits to apply for funding and manage their own data.\n\nI hope that AI can equalize relationships and reduce power dynamics -- rather than reinforcing them or further perpetuating them. But I worry that resources will continue to be available only to those sophisticated, already well-funded organizations while smaller, undersourced organizations will continue to struggle to keep up... continue to work by hand or with fewer resources... thereby making it even harder to compete for funding. \n\nI worry that AI will reduce human connection by being SO quantitative... or FAKELY Quantitative that opportunities for relationship, for exploration and experimentation will be missed. I hope that AI will not replace or attempt to substitute for people meeting people and engaging directly. ",
+          "As a small (3 full-time) organization, we are not going to turn down any help we can get, so we are using AI tools that are available to us, including ChatGPT Plus, the built-in AI tools in Canva, Asana, and probably other tools we use that I am not aware of/aren't explicitly labeled as AI. We are working on policies around data use, security, privacy, etc., but it seems there is so much unknown about AI currently that it is hard to predict how it will affect these types of policies/uses in the future. It's also overwhelming to try and parse all of the (often conflicting) information about AI and the ethical implications of all of its uses.",
+          "My hope is that it will reduce repetitive tasks and make things like posting on social media more relevant to the needs of our followers and more regular.  I use it regularly now to support with content generation when working on proposals, for ideas on posts, to support with the development of SOPs, and to analyze and critique things that I've written.  We currently only have access to ChatGPT and it is not widely used in the organization.  I don't know enough about AI to be able to speak about fears or peril.  I personally think it's an amazing tool that we should learn to use to the benefit of our team and clients."
+        ],
+        "1": [
+          "Hopes for AI in the Nonprofit Sector:\n\n* Increased Efficiency and Reach: AI could automate routine tasks, freeing up staff to focus on building relationships and developing impactful programs.\n* Enhanced Client Services: AI-powered tools could help us personalize services and better understand client needs.\n* Data-Driven Insights: AI could provide valuable insights into furniture poverty, donor behavior, and program effectiveness, leading to better decision-making and resource allocation.\n\nFears and Ethical Considerations:\n* Bias and Discrimination: We must be vigilant in ensuring that AI systems do not perpetuate or amplify existing biases. Furniture Bank's approach to using AI-generated images to ethically visualize furniture poverty is a prime example of prioritizing human dignity and avoiding harmful stereotypes.\n* Dehumanization: While efficiency is important, we must ensure AI does not replace the human connection that is central to our work. Building relationships and understanding individual needs cannot be replicated by technology.\n* Job displacement: We need to be proactive in providing training and support to help employees adapt to the changing technological landscape.\n\nAI as a Tool for Good:\nI believe that the potential benefits of AI for the nonprofit sector outweigh the risks, as long as we approach it with caution and a commitment to ethical principles. By learning from organizations like Furniture Bank and embracing responsible AI development, we can harness its power to amplify our impact and create a more just and equitable world.",
+          "The promise and peril of AI as a tool to aid organizations evoke a spectrum of emotions and expectations within the zeitgeist, reflecting both hopes and fears deeply ingrained in society's collective consciousness.\n\n**Hopes:**\n\n1. **Efficiency and Productivity**: One of the primary hopes associated with AI is its potential to significantly enhance efficiency and productivity within organizations. By automating repetitive tasks, analyzing vast amounts of data, and providing insights, AI has the capacity to streamline operations, allowing organizations to focus their human resources on more strategic and creative endeavors.\n\n2. **Innovation and Creativity**: AI holds the promise of unlocking new realms of innovation and creativity. Through machine learning algorithms and predictive analytics, AI systems can uncover patterns and trends that human analysts might overlook, leading to breakthroughs in product development, marketing strategies, and problem-solving.\n\n3. **Personalization and Customer Experience**: With AI-powered tools, organizations can deliver highly personalized experiences to their customers. From recommendation engines to chatbots, AI enables businesses to tailor their offerings to individual preferences and needs, thereby enhancing customer satisfaction and loyalty.\n\n4. **Healthcare Advancements**: In the realm of healthcare, AI offers the hope of revolutionizing diagnosis, treatment, and patient care. From medical imaging analysis to drug discovery, AI-driven technologies have the potential to accelerate scientific progress and improve outcomes for patients worldwide.\n\n**Fears:**\n\n1. **Job Displacement and Economic Inequality**: Perhaps the most prominent fear surrounding AI is its potential to automate jobs and contribute to widespread unemployment. As AI systems become more sophisticated, there's apprehension that many traditional roles could be rendered obsolete, exacerbating economic inequality and social unrest.\n\n2. **Ethical and Bias Concerns**: AI algorithms are only as unbiased as the data they're trained on, leading to fears of perpetuating existing biases and discrimination. Issues of algorithmic transparency, accountability, and fairness raise ethical concerns about the use of AI in decision-making processes, particularly in sensitive domains such as criminal justice or hiring.\n\n3. **Loss of Human Autonomy and Control**: As AI systems become increasingly integrated into everyday life, there's apprehension about the erosion of human autonomy and agency. From algorithmic surveillance to autonomous weapons, the prospect of ceding control to AI raises profound questions about accountability, governance, and the preservation of human dignity.\n\n4. **Existential Risks**: Some voices within the zeitgeist express existential fears about the unchecked advancement of AI, envisioning scenarios where superintelligent machines surpass human intelligence and pose existential risks to humanity. While these concerns may seem speculative, they underscore the need for responsible AI development and robust safety measures.\n\n**AI in the Zeitgeist:**\n\nIn the zeitgeist, AI occupies a complex and multifaceted role, embodying both aspirations for progress and anxieties about unintended consequences. It symbolizes humanity's quest for mastery over technology and the natural world, while also evoking existential fears about the uncertain future that lies ahead. As AI continues to shape our societies, cultures, and economies, it serves as a mirror reflecting our deepest hopes, fears, and aspirations as a species.",
+          "As an organization dedicated to fostering sustainable development and social equity, the Institute of Social Research and Development (ISRD) views AI as a powerful tool with immense potential to enhance our work. However, this potential is accompanied by significant challenges and risks that we must navigate carefully.\n\nHopes\nData Analysis and Decision Making:\n\nAI can help us analyze large datasets quickly and accurately, allowing us to make informed decisions based on comprehensive insights. For instance, AI-driven data analysis can identify trends and patterns in health outcomes, educational achievements, and socio-economic conditions, enabling us to tailor our interventions more effectively.\nPredictive Analytics:\n\nBy leveraging AI for predictive analytics, we can anticipate future challenges and opportunities. This capability is particularly valuable in climate change resilience, where predicting environmental changes can help us prepare and respond proactively to protect vulnerable communities.\nEnhanced Communication and Outreach:\n\nAI-powered tools can improve our communication strategies by personalizing content and optimizing outreach efforts. Chatbots and virtual assistants can provide instant support to beneficiaries, answer queries, and guide them through accessing our services.\nResource Optimization:\n\nAI can streamline our operations by automating routine tasks such as scheduling, reporting, and monitoring. This efficiency allows our team to focus more on strategic planning and community engagement.\nFears\nData Privacy and Security:\n\nThe use of AI involves collecting and processing sensitive data, raising concerns about privacy and security. Ensuring that our data management practices comply with ethical standards and legal regulations is paramount to protect the rights of our beneficiaries.\nBias and Fairness:\n\nAI systems can perpetuate and even exacerbate existing biases if not carefully designed and monitored. We fear that biased algorithms could lead to unfair treatment of marginalized communities, undermining our mission of promoting equity and inclusion.\nDependency and Skill Gaps:\n\nRelying heavily on AI tools could create a dependency that may erode essential human skills within our organization. Additionally, there is a risk of widening the digital divide if our staff and beneficiaries are not adequately trained to use these technologies.\nEthical Concerns:\n\nThe ethical implications of AI, such as the potential for surveillance and loss of autonomy, are significant concerns. We must ensure that our use of AI aligns with our values and respects the dignity and rights of all individuals.\nWhat AI Means to Us\nAI represents both a promise and a challenge. It is a tool that, if harnessed correctly, can amplify our impact and drive more effective and efficient solutions to complex social issues. However, it also demands a cautious and principled approach to avoid unintended consequences and ensure that technology serves humanity positively.\n\nAn anecdote that illustrates our experience with AI is our recent pilot project using AI to analyze educational data from rural schools. The insights gained helped us identify key areas for intervention, such as teacher training and resource allocation. However, we also encountered challenges in ensuring data accuracy and addressing concerns from the community about data use. This experience reinforced our belief that while AI can be transformative, it must be implemented thoughtfully and inclusively.\n\nIn conclusion, AI holds great promise for enhancing our work at ISRD, but it also requires us to be vigilant and responsible in its application. Balancing the benefits and risks will be crucial as we integrate AI into our efforts to build resilient and equitable communities."
+        ],
+        "2": [
+          "Not know",
+          "Don't know enough about it yet.",
+          "I don't know enough about it to have and hopes or fears."
+        ]
+      }
+    },
+    "cluster3_crosstab": {
+      "-1": {
+        "-1.0": 12,
+        "0.0": 50,
+        "1.0": 20,
+        "NaN": 60
+      },
+      "0": {
+        "-1.0": 39,
+        "0.0": 105,
+        "1.0": 34,
+        "NaN": 87
+      },
+      "1": {
+        "-1.0": 51,
+        "0.0": 273,
+        "1.0": 22,
+        "NaN": 177
+      }
+    },
+    "pre_registered": "yes"
+  }
+]

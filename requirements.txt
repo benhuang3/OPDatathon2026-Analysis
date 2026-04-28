@@ -1,0 +1,53 @@
+# Python dependencies for the 30-hour research-grade pass.
+# Install with:  pip install -r requirements.txt
+#
+# Versions are floors, not pins — the resolver should pick compatible upper
+# bounds. Tested cleanly on Python 3.12 (April 2026). If you're on 3.13+,
+# torch and pymc may need minor version bumps.
+
+# --- Core data + plotting (already present in the base conda env, listed for completeness) ---
+pandas>=2.2,<3
+numpy>=1.26,<3
+scipy>=1.13,<2
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+statsmodels>=0.14,<1
+pyarrow>=15
+
+# --- Latent class analysis & mixture models (Phase 5: latent_class_model) ---
+stepmix>=2.1            # Vermunt-style LCA / latent profile analysis on mixed data
+
+# --- Item Response Theory (Phase 5: irt_score) ---
+girth>=0.8              # 2PL, GRM, partial credit IRT models
+
+# --- Structural Equation Modeling (Phase 5: sem_fit) ---
+semopy>=2.3             # lavaan-style SEM in Python
+
+# --- Decomposition + linear models (Phase 5: oaxaca_decompose) ---
+linearmodels>=6          # IV, panel models; also used as OLS backbone for Oaxaca-Blinder
+
+# --- Causal inference / mediation sensitivity (Phase 5: mediation_full) ---
+dowhy>=0.11              # refute_estimate for unmeasured-confounder sensitivity
+pingouin>=0.5            # convenience stats incl. mediation_analysis, partial_corr
+
+# --- Bayesian multilevel models (Phase 5: multilevel_model) ---
+bambi>=0.13              # formula-style mixed-effects on PyMC; brings in pymc>=5
+arviz>=0.18              # diagnostics for the Bayesian fits
+
+# --- Multi-select co-occurrence + community detection (Phase 5: mca_louvain) ---
+prince>=0.13             # Multiple Correspondence Analysis (Le Roux & Rouanet)
+networkx>=3.2
+python-louvain>=0.16     # Louvain community detection
+
+# --- Survey weighting / non-probability inference (Phase 5: ipw_reweight) ---
+samplics>=0.4            # raking, post-stratification, calibration weights
+
+# --- Multilingual topic modeling (Phase 5: bertopic_pipeline) ---
+sentence-transformers>=2.7   # paraphrase-multilingual-MiniLM-L12-v2 for embeddings
+bertopic>=0.16               # topic clustering on embeddings
+hdbscan>=0.8                 # density-based clustering used by BERTopic
+umap-learn>=0.5              # dimensionality reduction used by BERTopic
+langdetect>=1.0              # filter English vs Hindi vs other languages in free-text
+
+# --- Bibliography handling (Phase 2: bibliography.bib) ---
+bibtexparser>=1.4
