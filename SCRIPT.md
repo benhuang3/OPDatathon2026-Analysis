@@ -1,6 +1,6 @@
 # SCRIPT.md — Presenter script
 
-Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable pace. Each section is what you actually say; bracketed lines are stage directions.
+Speaker notes for the slides in `SLIDES.md`. ~7 minute talk for a mixed-skill audience: policy analysts, foundation program officers, nonprofit directors, and the technically curious. Statistical methods are kept in the background; what's foregrounded is what each result *means* for a funding or program decision.
 
 ---
 
@@ -10,17 +10,19 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 >
 > **Nonprofits already use AI — for writing. The next wave they want is analytical. And the thing standing between them and that wave is not money or infrastructure. It's understanding.**
 >
-> Everything from here is evidence for that claim.
+> If you fund nonprofit capacity, design training, or set policy on technology in the social sector, this should change where you put the next dollar.
 
 ---
 
 ## Slide 2 — The data
 
-> The data is the GivingTuesday 2024 AI Readiness Survey. 930 nonprofit professionals. Four source lists: the main GivingTuesday list, an Indian sub-sample, a tech-leaning channel, and regional hubs.
+> The dataset is the GivingTuesday 2024 AI Readiness Survey. 930 nonprofit professionals responded — directors, program staff, M&E people, technologists.
 >
-> Each respondent told us what they currently do with AI, what they want to do with AI, what infrastructure they have, and how they feel about it. Plus a free-text box, in mixed languages.
+> They came in through four channels: the main GivingTuesday list (which is broadly representative of US and global nonprofits), an Indian sub-sample, a tech-leaning channel, and regional hubs.
 >
-> One thing to flag up front: the Indian sub-sample is large — 27% of the total. Every result I'm about to show survives reweighting away from that.
+> Each respondent told us what they currently do with AI, what they want to do with AI, what infrastructure their organization has, and how they feel about the technology. Plus an open-ended box, which a few of them answered in Hindi.
+>
+> One thing to flag up front: the Indian sub-sample is large — 27% of the total. I'll come back to this, but every result I'm about to show holds when you reweight away from it.
 
 ---
 
@@ -28,13 +30,13 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 
 > [Click to Fig 1]
 >
-> Here's the headline. On the left, paired bars: what people use AI for today, versus what they want to use it for. On the right, the gap, with confidence intervals.
+> Here's the headline. On the left, paired bars: what people use AI for *today*, versus what they *want* to use it for. On the right, the gap between the two.
 >
-> Look at the top three rows — generate, ask, translate. Use and want are basically tied. Nonprofits are already using AI for content.
+> Look at the top three rows — generate text, ask a chatbot, translate. Use and want are basically tied. Nonprofits are already using AI for content, and they're already getting what they want there.
 >
-> Now look at the bottom four — interpret, assist, predict, organize. These are the analytical tasks. The gaps are 35 to 41 percentage points. *Predict* is the most-wanted task at 52% and one of the least-used at 11%.
+> Now look at the bottom four — interpret data, assist with workflow, predict outcomes, organize information. These are the analytical tasks. The gaps are 35 to 41 percentage points. *Predict* is the most-wanted task in the survey, at 52%, and one of the least-used, at 11%.
 >
-> This is the inversion. Today's AI use is content. Tomorrow's demand is analytics.
+> The picture is sharp: today's AI use is content. Tomorrow's demand is analytics.
 
 ---
 
@@ -42,11 +44,11 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 
 > [Click to Fig 7]
 >
-> Before we read anything into this, the obvious question: is this just an artefact of who's in the sample?
+> Before reading too much into this, the obvious question: is this just an artefact of who happens to be in the survey?
 >
-> No. We ran a cluster bootstrap that resamples whole source strata — confidence intervals exclude zero. We reweighted the sample to a target source mix that down-weights India and pulls up the under-represented strata — the per-task gaps move by less than half a percentage point. McNemar's test on the paired use-versus-want indicators: p less than ten-to-the-minus-sixty-six on every analytical task.
+> No. We tested it three different ways. We re-ran the analysis after stripping out and rebuilding entire source channels — the gap held. We re-weighted the sample to a target mix that downweights the over-represented Indian channel and pulls up the under-represented ones — the per-task gaps moved by less than half a percentage point. And the statistical significance is overwhelming on every analytical task.
 >
-> The inversion is real.
+> What you're seeing is not a sample-quirk. It's a real pattern in the field.
 
 ---
 
@@ -54,13 +56,13 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 
 > [Click to Fig 10]
 >
-> Now: who is stuck? Who wants AI but doesn't use it?
+> So who is stuck? Who *wants* AI but doesn't use it?
 >
-> The dataset has a three-way HDBSCAN cluster: Skeptics, Late Adopters, Consumers. The "Late Adopters" are the willing-but-not-using middle.
+> The dataset gives us a three-group breakdown: Skeptics, Late Adopters, Consumers. The Late Adopters are the willing-but-not-using middle — the group most capacity-building dollars are aimed at.
 >
-> Look at the middle bars: cloud storage and data policy. Late Adopters score *higher* on infrastructure than the Skeptic group. They are not blocked on plumbing.
+> Look at the middle bars: cloud storage and data policy. Late Adopters score *higher* on infrastructure than the Skeptic group. They are not blocked on plumbing. They have the basics.
 >
-> What they're missing: 53% of them say "I don't understand AI enough to have a clear view." Compared to 24% of the Consumer group. That's the bottleneck.
+> What they're missing is something else: 53% of them say "I don't understand AI enough to have a clear view." Compared to 24% of the active-user group. **That's the bottleneck.** Not cloud, not policy, not staffing. Comprehension.
 
 ---
 
@@ -68,91 +70,81 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 
 > [Click to Fig 6]
 >
-> Let's put it in a model. Predict AI use from four candidates: comfort, readiness, having a tech specialist, and org size.
+> Let's stress-test that. We modeled how much AI an organization uses, with four candidate explanations competing: how comfortable the *person* is with AI, how data-ready the *organization* is, whether they have a tech specialist on staff, and how big the org is.
 >
-> Comfort is the largest coefficient by a wide margin. Readiness is second. Org size and having a tech specialist are statistically null once those two are in.
+> Personal comfort with AI is the largest factor by a wide margin. Data readiness is second. Organization size and having a tech specialist are statistically indistinguishable from zero once those two are in.
 >
-> Translation: structural variables — how big you are, whether you have a tech person — don't matter for AI use once you control for whether the *people* in the org are comfortable with it.
+> In plain terms: how big you are and whether you have a tech person on staff don't predict AI use, once you account for whether the *people* in the org are comfortable with the technology. The human factor swamps the structural one.
 
 ---
 
-## Slide 7 — Comfort × readiness: both pull, mild ceiling
+## Slide 7 — Comfort and readiness reinforce each other
 
 > [Click to Fig 2]
 >
-> Same Poisson model, visualised over the comfort-by-readiness plane. Each axis pulls AI use up by roughly a factor of three across its range.
+> Here's the same finding visualized differently. Personal comfort on one axis, organizational readiness on the other. The color is predicted AI use.
 >
-> The contours bend slightly at the top right — that's a small negative interaction, p around 0.025. It says there's mild diminishing returns when both are high. You don't get to score *very* far above your weaker leg.
+> Each axis pulls AI use up by roughly a factor of three across its full range. They reinforce each other.
 >
-> The implication: if you only fund infrastructure or only fund training, you cap how far an organization can go.
+> But there's a slight ceiling effect when both are high — you can't compensate for a weak leg by piling more onto your strong one. Practical implication: if you only fund infrastructure, or only fund training, you cap how far an organization can actually go. The two have to move together.
 
 ---
 
-## Slide 8 — The contrarian finding: GN/GS reverses
+## Slide 8 — The contrarian finding: the digital divide reverses
 
 > [Click to Fig 4]
 >
-> This is the slide that's going to surprise you.
+> This is the slide I expect to surprise you the most.
 >
-> The standard story — Heeks, Toyama, the digital-divide literature — predicts that small Global South orgs without a tech specialist should fall furthest behind on a new technology wave. They should be the laggards.
+> The standard story about technology in the Global South — and it's the story baked into most international capacity-building grants right now — predicts that small Global South nonprofits without an in-house tech person should fall *furthest* behind on a new technology wave like AI. They are supposed to be the laggards.
 >
-> They're not. In the small, no-tech-specialist subset, Global South respondents use **0.42 more** AI tasks on average than their Global North counterparts. Oaxaca-Blinder decomposition: confirmed. Propensity-score matching on 132 pairs: confirmed. Inverse-probability weighting: confirmed. Three out of three robustness checks.
+> They aren't. In the small, no-tech-specialist subset of our sample, Global South respondents use **0.42 more** AI tasks on average than their Global North counterparts. We confirmed this three different ways — different statistical approaches, all agreeing on the same direction and roughly the same magnitude.
 >
-> The mechanism we suspect: consumer LLMs are accessible without infrastructure. Small GS orgs without an internal tech person have nothing to integrate against — they just use what's free. Small GN orgs without a tech person are working around legacy systems that don't talk to AI.
+> The mechanism we suspect: consumer AI like ChatGPT is free and accessible without infrastructure. Small GS orgs without an internal tech person have no legacy systems to integrate against — they can just use what's free. Small GN orgs without a tech person are often working around legacy systems that don't talk to AI yet.
+>
+> The implication for funders: the canonical "lagging cohort" you've been writing programs for is, on consumer AI, the leading cohort.
 
 ---
 
-## Slide 9 — Latent typology: a willing-but-not-using middle
+## Slide 9 — A willing-but-not-using middle
 
 > [Click to Fig 3]
 >
 > One more piece of evidence for the comprehension story.
 >
-> The cluster column in the dataset is HDBSCAN — distance-based, fits whoever it fits. We re-fit the typology with a Latent Class Analysis, which is generative on binary items and BIC-grounded.
+> When we re-fit the typology of respondents using a different statistical approach — one that's better-suited to the binary use-and-want survey items — a clear group emerges that the original three-cluster split misses.
 >
-> The k=3 solution recovers a class — the orange line in the middle — with near-zero probability of *using* AI for any task, but high probability of *wanting* it for the analytical tasks.
+> The orange line in the middle: this group has near-zero probability of *using* AI for any task, but high probability of *wanting* it for the analytical tasks. They want predict, interpret, assist, organize. They aren't doing any of it yet.
 >
-> That's the disengaged-aspirational middle. The HDBSCAN cluster doesn't isolate it cleanly. The LCA does. It's about a third of the sample.
+> That's the disengaged-aspirational middle. It's about a third of the sample. This is the group whose presence the headline is built on, and the group capacity programs should be designed around.
 
 ---
 
-## Slide 10 — Robustness + effect sizes at a glance
+## Slide 10 — Why this matters
 
-> [Click to Fig 8 and Fig 9, two-panel]
+> Four implications.
 >
-> Twelve headline findings, six robustness checks each. Every row passes at least five out of six. The partials are documented in `robustness.md` — one subgroup tends to be the failure mode, never the primary result.
+> **First: most foundation and government funding for nonprofit AI is currently aimed at infrastructure** — cloud credits, integration grants, technical staffing. For the median nonprofit, those line items are not the binding constraint. If the bottleneck is comprehension and the program is plumbing, that money will sit idle. Or worse, build infrastructure that nobody on staff can articulate a use case for.
 >
-> On the right, the eleven main effect sizes with confidence intervals on a single forest plot. Different scales — gaps in percentage points, coefficients in log-rates — but visualised together so you can see the magnitudes against each other.
+> **Second: the gap is biggest on the analytical tasks.** Predict, interpret, organize, assist. These are the tasks that move *programmatic* outcomes — needs assessments, targeting, M&E reporting, case management. Content AI is a productivity tool. Analytical AI is a programmatic capability. The aspiration gap sits exactly on the high-leverage side.
 >
-> The point of this slide is just: this is not one finding. It's a coherent set.
-
----
-
-## Slide 11 — Why this matters
-
-> Four reasons.
+> **Third: the standard digital-divide map is pointing programs at the wrong cohort.** Small Global South nonprofits are leading on consumer AI, not lagging. Funding logic calibrated to the previous decade's digital divide is going to misallocate.
 >
-> First: most foundation and government funding for nonprofit AI is currently aimed at infrastructure — cloud credits, integration grants, technical staffing. The data say that for the median nonprofit those line items are not the binding constraint. That money will sit idle.
->
-> Second: the gap is biggest on the analytical tasks. Those are the ones that move programmatic outcomes — needs assessment, targeting, M&E. Closing that gap is where the social-sector return compounds.
->
-> Third: the standard digital-divide map points programs at small Global South orgs as the lagging cohort. On consumer AI, they're leading. Funding logic calibrated to the previous decade is going to misallocate.
->
-> Fourth: the order matters. Comprehension is upstream of comfort, comfort is upstream of getting value out of infrastructure. Most current programs run the sequence backwards.
+> **Fourth: the order matters.** Comprehension is upstream of comfort, comfort is upstream of getting value out of infrastructure. Most current capacity programs run the sequence backwards — they fund the tooling first and hope understanding follows. The data say it doesn't.
 
 ---
 
-## Slide 12 — What to do
+## Slide 11 — What to do
 
-> Three concrete moves.
+> Three concrete moves for the people in this room.
 >
-> Lead with comprehension training. Cohort-based, locally tailored, peer-anchored — closer to a farmer-field-school model than a webinar. Late Adopters already have the plumbing; they need the mental model.
+> **Lead with comprehension training, not tools.** Cohort-based, locally tailored, peer-anchored. Closer to the farmer-field-school model used in agricultural extension than to a one-off webinar. Late Adopters already have the plumbing; they need a working mental model of what AI is and what it would do for their program.
 >
-> Build vigilance alongside comfort. In our data those two run in opposite directions — hands-on use raises risk awareness, subjective comfort lowers it. Training that produces only comfort will under-build the vigilance most users actually need.
+> **Build vigilance alongside comfort.** In our data those two move in opposite directions: hands-on use raises risk awareness, while subjective comfort *lowers* it. Training that produces only comfort, with no exposure to AI's failure modes, will under-build the caution most users actually need. That's the failure mode most likely to surface as misuse incidents two years from now, and it's preventable at training-design time.
 >
-> Localize analytical AI for the Global South. The translation gap shows up at +12pp in `[W]` over GN — that's where the next divide opens. Not on access.
+> **Localize analytical AI for the Global South.** The translation gap shows up at +12 percentage points in *want* over GN — that's where the next divide opens. Not on access to AI. On AI that works in the languages and contexts where it's actually deployed.
 >
-> The full statistical detail is in `PAPER.md` and `METHODS.md` in the repo. Twenty-six pre-registered hypotheses, two-hundred-plus prior-literature paper-cards, full robustness battery.
+> The full statistical detail is in `REPORT.md`, `PAPER.md`, and `METHODS.md` in the repo. Twenty-six pre-registered hypotheses, full robustness battery, two-hundred-plus prior-literature citations.
 >
 > Thanks. Happy to take questions.
 
@@ -160,8 +152,13 @@ Speaker notes for the 12 slides in `SLIDES.md`. ~7 minute talk at a comfortable 
 
 ## Pacing notes
 
-- Total target: ~7 minutes spoken.
-- Slides 3 and 5 are the load-bearing slides — slow down here.
+- Total target: ~7 minutes spoken. Add 30 seconds if the room is quiet on slide 8 — let the surprise land.
+- Slides 3, 5, and 8 are the load-bearing slides. Slow down here.
 - Slide 8 is the "moment" — pause for half a beat before the reveal.
 - Skip slide 9 if you're tight on time; it's confirmatory, not load-bearing.
-- Q&A: expect questions on (a) sample representativeness — point at slide 4; (b) why the GN/GS reversal — point at the consumer-LLM mechanism on slide 8; (c) what comprehension training would look like — point at slide 12, agricultural-extension analogy.
+- Audience translation cheat sheet in case anyone presses for method:
+  - "We modeled" = regression with controls.
+  - "Three different ways" = multiple statistical methods that agreed.
+  - "Re-weighted the sample" = inverse-probability weighting against a target distribution.
+  - "Different statistical approach for typology" = Latent Class Analysis instead of HDBSCAN.
+- Q&A: expect questions on (a) sample representativeness — point at slide 4; (b) why the GN/GS reversal — consumer LLMs + no legacy systems, slide 8; (c) what comprehension training would look like — agricultural-extension analogy on slide 11.
