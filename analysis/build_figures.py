@@ -82,6 +82,14 @@ def load_findings():
         return {d["id"]: d for d in json.load(f)}
 
 
+_TASK_FULL = {"Generat": "Generate", "Translat": "Translate", "Organi": "Organize"}
+
+
+def nicify_task(stem: str) -> str:
+    """Restore the final letter(s) on truncated task stems used as column suffixes."""
+    return _TASK_FULL.get(stem, stem)
+
+
 # ---------------------------------------------------------------------------
 # Figure 1 — Aspiration inversion (per-task gaps with cluster-bootstrap CI)
 # ---------------------------------------------------------------------------
@@ -224,7 +232,13 @@ def fig3_lca_profile(df):
             labels.append(f"Aspirational (n={sizes[c]})")
         else:
             labels.append(f"Class {c} (n={sizes[c]})")
-    item_labels = [c.replace("[U] ", "Use: ").replace("[W] ", "Want: ") for c in items]
+    def _label(c):
+        if c.startswith("[U] "):
+            return "Use: " + nicify_task(c[4:])
+        if c.startswith("[W] "):
+            return "Want: " + nicify_task(c[4:])
+        return c
+    item_labels = [_label(c) for c in items]
 
     fig, ax = plt.subplots(figsize=(11, 7.5))
     x = np.arange(len(items))
@@ -375,7 +389,7 @@ def fig7_ipw_invariance(findings):
     width = 0.35
     ax.bar(x - width/2, df["gap_unweighted"], width, color=PALETTE["muted"], label="Unweighted", edgecolor="#1A1024")
     ax.bar(x + width/2, df["gap_weighted"], width, color=PALETTE["accent"], label="IPW-weighted", edgecolor="#1A1024")
-    ax.set_xticks(x); ax.set_xticklabels(df["task"], rotation=30, ha="right")
+    ax.set_xticks(x); ax.set_xticklabels([nicify_task(t) for t in df["task"]], rotation=30, ha="right")
     ax.set_ylabel("Want − Use (pp)")
     ax.yaxis.set_major_formatter(mpl.ticker.PercentFormatter(1.0))
     ax.set_title("Aspiration inversion is invariant to sample reweighting",
